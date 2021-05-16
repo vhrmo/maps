@@ -1,0 +1,21 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+    //display: none !important;
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+.project-tagline {
+    display: none !important;
+
+}
+
+.btn {
+    display: none !important;
+
+}
+
