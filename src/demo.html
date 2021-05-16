@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-labeled-circle@1.0.3/dist/L.LabeledCircle.js"
+            integrity="sha256-UKDnk/3X8sl+NLArMauoubVvGlSQ5gHJAP4Na0QzymQ=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="nadacia.css" crossorigin=""/>
+    <script src="nadacia.js" crossorigin=""></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-size: 12px;
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            padding-top: 10px;
+            padding-bottom: 80px;
+        }
+
+        .container {
+            width: 100%;
+            padding: 3px;
+            /*display: inline-flex;*/
+        }
+
+        .text {
+            text-align: left;
+            width: max-content;
+            margin: 0 auto;
+            /*border: solid black 1px;*/
+        }
+
+        .map {
+            width: 700px;
+            height: 350px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Počty pacientov po krajoch</h2>
+
+<div class="container">
+    <div class="text">
+        <ul>
+            <li>Veľkosť mapy je možné prispôsobiť.</li>
+            <li>Mapu je možné vložiť do existujúcej stránky.</li>
+            <li>Všetky farby je možné zmeniť / prispôsobiť cieľovej stránke kde bude mapa umiestnená.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div id="map1" class="map"></div>
+</div>
+<div class="container">
+    <div id="map2" class="map"></div>
+</div>
+<div class="container">
+    <div id="map3" class="map"></div>
+</div>
+
+<h2>Počty pacientov po okresoch</h2>
+
+<div class="container">
+    <div class="text">
+        <ul>
+            <li>Veľkosť mapy je možné prispôsobiť.</li>
+            <li>Mapu je možné vložiť do existujúcej stránky.</li>
+            <li>Všetky farby je možné zmeniť / prispôsobiť cieľovej stránke kde bude mapa umiestnená.</li>
+            <li>Pri prechode myšou ponad číslo sa zobrazí tooltip s názvom okresu.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div id="map4" class="map"></div>
+</div>
+<div class="container">
+    <div id="map5" class="map"></div>
+</div>
+<div class="container">
+    <div id="map6" class="map"></div>
+</div>
+<div class="container">
+    <div id="map7" class="map"></div>
+</div>
+<div class="container">
+    <div id="map8" class="map"></div>
+</div>
+<div class="container">
+    <div id="map9" class="map"></div>
+</div>
+<div class="container">
+    <div id="map10" class="map"></div>
+</div>
+<div class="container">
+    <div id="map11" class="map"></div>
+    * V tejto mape nefunguje tooltip.
+</div>
+
+
+<script>
+    /***************************************************************************
+     * Create maps
+     **************************************************************************/
+    createMap('map1', {
+        overlays: [regionsOverlay, regionalCounts],
+        regionsOverlay: {
+            colorScheme: regionColors1
+        },
+        regionalCounts: {
+            method: addInfoLabeledCircle
+        }
+    });
+
+    createMap('map2', {
+        overlays: [regionsOverlay, regionalCounts],
+        regionsOverlay: {
+            colorScheme: regionColors2
+        },
+        regionalCounts: {
+            method: addInfoDivIcon
+        }
+    });
+
+    createMap('map3', {
+        overlays: [regionsOverlay, regionalCounts],
+        regionsOverlay: {
+            colorScheme: regionColors3
+        },
+        regionalCounts: {
+            method: addInfoSvgOverlay
+        }
+    });
+
+
+    createMap('map4', {
+        // loadTiles: true,
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: varSizeCircleLabeledCircle,
+            anchorColor: 'none',
+            // opacity: 0.4,
+            fillOpacity: 0.8
+        }
+    });
+
+    createMap('map5', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: varSizeCircleLabeledCircle,
+            color: '#fca001',
+            anchorColor: 'none'
+        }
+    });
+
+    createMap('map6', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: varSizeCircleDivIcon
+        }
+    });
+
+    createMap('map7', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: varSizeCircleDivIcon,
+            outerCircleStyle: 'map-marker-circle-outer',
+            innerCircleStyle: 'none'
+        }
+    });
+
+    createMap('map8', {
+        // loadTiles: true,
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: varSizeCircleDivIcon,
+            outerCircleStyle: 'map-marker-circle-outer-red',
+            innerCircleStyle: 'none'
+        }
+    });
+
+    createMap('map9', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: addInfoLabeledCircle,
+            radius: 13
+        }
+    });
+
+    createMap('map10', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: addInfoDivIcon,
+            outerCircleStyle: 'map-marker-circle2-smaller',
+            innerCircleStyle: 'map-marker-circle3-smaller'
+        }
+    });
+
+    createMap('map11', {
+        overlays: [districtsOverlay],
+        districtsOverlay: {
+            method: addInfoSvgOverlay
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

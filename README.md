@@ -1,37 +1,85 @@
-## Welcome to GitHub Pages
+# Maps library
 
-You can use the [editor on GitHub](https://github.com/vhrmo/maps/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Library to help display overlay information over a map of Slovakia.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* [Demo](Demo.md)
+* [Documentation on Github pages](https://vhrmo.github.io/maps)
+* [Development info](Development.md)
 
-### Markdown
+# Nadácia
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+JavaScript obsahuje štatistické dáta ku dňu: _TODO add_date_tbd_
 
-```markdown
-Syntax highlighted code block
+### Použitie
 
-# Header 1
-## Header 2
-### Header 3
+#### 1. Vložte JS a CSS do hlavičky stránky
 
-- Bulleted
-- List
+```html
+<head>
 
-1. Numbered
-2. List
+    ...
 
-**Bold** and _Italic_ and `Code` text
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-labeled-circle@1.0.3/dist/L.LabeledCircle.js"
+            integrity="sha256-UKDnk/3X8sl+NLArMauoubVvGlSQ5gHJAP4Na0QzymQ=" crossorigin=""></script>
 
-[Link](url) and ![Image](src)
+    <link rel="stylesheet" href="https://vhrmo.github.io/maps/src/nadacia.css" crossorigin=""/>
+    <script src="https://vhrmo.github.io/maps/src/nadacia.js" crossorigin=""></script>
+
+    ...
+
+</head>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### 2. Definujte map container v HTML
 
-### Jekyll Themes
+```html
+    <div class="container">
+        <div id="map1" class="map"></div>
+    </div>
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vhrmo/maps/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Príklad štýlov pre HTML komponenty:
 
-### Support or Contact
+```css
+    .container {
+        width: 100%;
+        padding: 3px;
+    }
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+    .map {
+        width: 700px;
+        height: 350px;
+        margin: 0 auto;
+    }
+```
+
+
+#### 3. Pridajte inicializačný skript mapy na koniec BODY elementu
+
+```html
+
+<body>
+
+    ...
+
+    <script>
+        createMap('map1', {
+            overlays: [districtsOverlay],
+            districtsOverlay: {
+                method: varSizeCircleLabeledCircle,
+                anchorColor: 'none',
+                fillOpacity: 0.8
+            }
+        });
+    </script>
+</body>
+
+
+```
+

@@ -1,0 +1,169 @@
+
+.leaflet-interactive {
+    cursor: default !important;
+}
+
+.leaflet-container {
+    background: #fcfcfc;
+}
+
+.map-region-label {
+    color: #808080;
+    font-size: 12px;
+    font-family: Optima, Verdana, Helvetica, Arial, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.map-marker-circle-outer-red {
+    /*border: black solid 1px;*/
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    padding:2px;
+    background-color: red;
+    fill-opacity: 0.1;
+    opacity: 0.8;
+}
+
+.map-marker-circle-outer {
+    /*border: black solid 1px;*/
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    padding:2px;
+    background-color: #f4a616;
+    fill-opacity: 0.1;
+    opacity: 0.8;
+}
+
+.map-marker-circle-inner {
+    /*display: flex;*/
+    background-image: url('assets/button-orange2.png');
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+
+/* Outer box within which to center the icon - this is the max size of an icon */
+.map-marker-circle1 {
+    /*border: black solid 1px;*/
+    display: flex;
+    pointer-events: none !important;
+}
+
+/* Biggest version of the outer circle */
+.map-marker-circle2 {
+    margin-left: 1px;
+    margin-top: 1px;
+    width: 48px;
+    height: 48px;
+    border-radius: 25px;
+    /*background-color:rgba(253, 156, 115, 0.6);*/
+    /*background-color: rgba(218, 165, 253, 0.6);*/
+    background-color: rgba(253, 191, 165, 0.7);
+    /*background-color: rgba(255, 102, 0, 0.6);*/
+    pointer-events: auto !important;
+}
+
+/* Biggest version of the inner circle */
+.map-marker-circle3 {
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    /*background-color:rgba(241, 128, 23, 0.6);*/
+    /*background-color: rgba(205, 155, 238, 0.6);*/
+    background-color: rgba(253, 191, 165, 0.9);
+    /*background-color: rgba(255, 102, 0, 0.6);*/
+
+    text-align: center;
+    color: #252525;
+    font-size: 16px;
+    line-height: 38px;
+}
+
+.map-marker-circle2-smaller {
+    margin-left: 11px;
+    margin-top: 11px;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    background-color: rgba(253, 191, 165, 0.7);
+    pointer-events: auto !important;
+}
+
+.map-marker-circle3-smaller {
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+
+    text-align: center;
+    color: #252525;
+    font-size: 12px;
+    line-height: 25px;
+    background-color: rgba(253, 191, 165, 0.9);
+}
+
+
+@media screen and (max-width: 4000px) {
+    .map-marker-circle2 {
+        width: 38px;
+        height: 38px;
+        border-radius: 19px;
+        margin-left: 6px;
+        margin-top: 6px;
+    }
+
+    .map-marker-circle3 {
+        width: 28px;
+        height: 28px;
+        border-radius: 14px;
+        font-size: 12px;
+        line-height: 30px;
+    }
+}
+
+/*@media screen and (max-width: 700px) {*/
+/*    .map-marker-circle2 {*/
+/*        width: 30px;*/
+/*        height: 30px;*/
+/*        border-radius: 15px;*/
+/*        margin-left: 10px;*/
+/*        margin-top: 10px;*/
+/*    }*/
+
+/*    .map-marker-circle3 {*/
+/*        width: 22px;*/
+/*        height: 22px;*/
+/*        border-radius: 11px;*/
+/*        margin-left: 4px;*/
+/*        margin-top: 4px;*/
+/*        font-size: 10px;*/
+/*        line-height: 25px;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 450px) {*/
+/*    .map-marker-circle2 {*/
+/*        width: 24px;*/
+/*        height: 24px;*/
+/*        border-radius: 12px;*/
+/*        margin-left: 13px;*/
+/*        margin-top: 13px;*/
+/*    }*/
+
+/*    .map-marker-circle3 {*/
+/*        width: 18px;*/
+/*        height: 18px;*/
+/*        border-radius: 9px;*/
+/*        margin-left: 3px;*/
+/*        margin-top: 3px;*/
+/*        font-size: 8px;*/
+/*        line-height: 20px;*/
+/*    }*/
+/*}*/
