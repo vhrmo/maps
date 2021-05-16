@@ -2,7 +2,7 @@
 
 Library to help display overlay information over a map of Slovakia.
 
-* [Demo](Demo.md)
+* [Demo](https://vhrmo.github.io/maps/Demo.html)
 * [Documentation on Github pages](https://vhrmo.github.io/maps)
 * [Development info](Development.md)
 
