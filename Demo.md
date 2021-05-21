@@ -1,41 +1,16 @@
 ---
 title: Nadácia - demo máp
+layout: nadacia_demo
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-labeled-circle@1.0.3/dist/L.LabeledCircle.js"
-        integrity="sha256-UKDnk/3X8sl+NLArMauoubVvGlSQ5gHJAP4Na0QzymQ=" crossorigin=""></script>
-
-<link rel="stylesheet" href="src/nadacia.css" crossorigin=""/>
-<script src="src/nadacia.js" crossorigin=""></script>
-
-<style>
-    .container {
-        width: 100%;
-        padding: 3px;
-        /*display: inline-flex;*/
-    }
-
-    .map {
-        width: 700px;
-        height: 350px;
-        margin: 0 auto;
-    }
-</style>
-
-# Počty pacientov po krajoch
+## Počty pacientov po krajoch
 * Veľkosť mapy je možné prispôsobiť.
 * Mapu je možné vložiť do existujúcej stránky.
 * Všetky farby je možné zmeniť / prispôsobiť cieľovej stránke kde bude mapa umiestnená.
 
 [comment]: <> (================================================================================)
 
-## Príklad 1
+### Príklad 1
 ```javascript
     createMap('map1', {
         overlays: [regionsOverlay, regionalCounts],
@@ -67,7 +42,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 2
+### Príklad 2
 ```javascript
     createMap('map2', {
         overlays: [regionsOverlay, regionalCounts],
@@ -98,7 +73,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 3
+### Príklad 3
 ```javascript
     createMap('map3', {
         overlays: [regionsOverlay, regionalCounts],
@@ -127,7 +102,7 @@ title: Nadácia - demo máp
     });
 </script>
 
-# Počty pacientov po okresoch
+## Počty pacientov po okresoch
 
 * Veľkosť mapy je možné prispôsobiť.
 * Mapu je možné vložiť do existujúcej stránky.
@@ -137,7 +112,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 4
+### Príklad 4
 ```javascript
     createMap('map4', {
         overlays: [districtsOverlay],
@@ -166,7 +141,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 5
+### Príklad 5
 ```javascript
     createMap('map5', {
         overlays: [districtsOverlay],
@@ -195,7 +170,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 6
+### Príklad 6
 ```javascript
     createMap('map6', {
         overlays: [districtsOverlay],
@@ -220,7 +195,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 7
+### Príklad 7
 ```javascript
     createMap('map7', {
         overlays: [districtsOverlay],
@@ -249,7 +224,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 8
+### Príklad 8
 ```javascript
     createMap('map8', {
         overlays: [districtsOverlay],
@@ -278,7 +253,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 9
+### Príklad 9
 ```javascript
     createMap('map9', {
         overlays: [districtsOverlay],
@@ -305,7 +280,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 10
+### Príklad 10
 ```javascript
     createMap('map10', {
         overlays: [districtsOverlay],
@@ -334,7 +309,7 @@ title: Nadácia - demo máp
 
 [comment]: <> (================================================================================)
 
-## Príklad 11
+### Príklad 11
 ```javascript
     createMap('map11', {
         overlays: [districtsOverlay],

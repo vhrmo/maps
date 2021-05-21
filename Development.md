@@ -1,8 +1,8 @@
 
 
-# Github pages testing
+# GitHub pages testing
 
-Test the Github pages by running:
+Test the GitHub pages by running:
 
     bundle exec jekyll serve
 
