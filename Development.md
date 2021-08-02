@@ -19,4 +19,8 @@ See full details on [Github pages documentation](https://docs.github.com/en/page
 * GeoJson data taken from: <https://github.com/drakh/slovakia-gps-data>
 
 
+# Leaflet tiles
+
+* List of map tile providers: <https://github.com/leaflet-extras/leaflet-providers>
+* Interactive demo of all map tiles: <https://leaflet-extras.github.io/leaflet-providers/preview>
 
